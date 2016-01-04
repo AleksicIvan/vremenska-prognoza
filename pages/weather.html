@@ -1,0 +1,22 @@
+<p>
+	<a href="#/">Povratak na pretragu</a>
+</p>
+
+Vremenska prognoza za {{ grad }}
+<hr />
+Dani: <a href="#/weather/2" ng-class="{'btn-primary': days === '2'}">2</a> | <a href="#/weather/5" ng-class="{'btn-primary': days === '5'}">5</a> | <a href="#/weather/7" ng-class="{'btn-primary': days === '7'}">7</a>
+<hr />
+<div ng-repeat="w in weatherResult.list">
+	<div class="row">
+		<div class="col-md-12">
+			<weather-directive weather-day="w" convert-to-standard="weatherToCelsius(dnevnaTemp)" convert-to-date="convertToDate(dt)" date-format="MMM d, y"></weather-directive>
+		</div>
+	</div>
+</div>
+
+
+<!--
+<h1>This is Weather page.</h1>
+<input type="text" ng-model="name" />
+<h3>Let's take a ride on the route: {{num}}</h3>
+-->
